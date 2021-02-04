@@ -1,0 +1,42 @@
+<p-toast></p-toast>
+<div class="contact-form">
+    <h4>Contact Form</h4> <br>
+    <div class="p-fluid p-formgrid p-grid">
+        <div class="p-field p-col-12 p-md-6">
+            <label for="firstname">Firstname</label>
+            <input id="firstname" type="text" aria-describedby="firstname-error" [(ngModel)]="firstname" pInputText>
+            <small *ngIf="!firstname && isButtonClicked" id="firstname-error" class="p-error">Firstname is required!</small>
+            <small *ngIf="firstname && isButtonClicked && !isFnameValid" id="firstname-error" class="p-error">Firstname is too long! Max allowed size is 50 characters.</small> 
+        </div>
+        <div class="p-field p-col-12 p-md-6">
+            <label for="lastname">Lastname</label>
+            <input id="lastname" type="text" aria-describedby="lastname-error" [(ngModel)]="lastname" pInputText> 
+            <small *ngIf="!lastname && isButtonClicked" id="lastname-error" class="p-error">Lastname is required!</small>
+            <small *ngIf="lastname && isButtonClicked && !isLnameValid" id="lastname-error" class="p-error">Lastname is too long! Max allowed size is 60 characters.</small>  
+        </div>
+        <div class="p-field p-col-12 p-md-6">
+            <label for="phone">Phone</label>
+            <input id="phone" type="text" aria-describedby="phone-error" [(ngModel)]="phone" pInputText> 
+            <small *ngIf="!phone && isButtonClicked" id="phone-error" class="p-error">Phone number is required!</small>
+            <small *ngIf="phone && isButtonClicked && !isPhoneValid" id="phone-error" class="p-error">Phone number is invalid!</small> 
+        </div>
+        <div class="p-field p-col-12 p-md-6">
+            <label for="email">Email</label>
+            <input id="email" type="text" aria-describedby="email-error" [(ngModel)]="email" pInputText> 
+            <small *ngIf="!email && isButtonClicked" id="email-error" class="p-error">Email is required!</small>
+            <small *ngIf="email && isButtonClicked && !isEmailValid" id="email-error" class="p-error">Email is invalid!</small> 
+        </div>
+        <div class="p-field p-col-12">
+            <label for="message">Message</label>
+            <textarea id="message" type="text" rows="4" aria-describedby="message-error" [(ngModel)]="message" pInputTextarea></textarea>
+            <small *ngIf="!message && isButtonClicked" id="message-error" class="p-error">Message is required!</small> 
+            <small *ngIf="message && isButtonClicked && !isMessageLenghtValid" id="message-error" class="p-error">Message should be max 1000 characters!</small>
+        </div>
+        <div class="p-field p-col-12 p-md-6">
+            <label for="city">City</label>
+            <p-dropdown inputId="city" aria-describedby="city-error" [options]="cities" [(ngModel)]="selectedCity" placeholder="Select" optionLabel="name"></p-dropdown>
+            <small *ngIf="!selectedCity && isButtonClicked" id="city-error" class="p-error">City is required!</small> 
+        </div>
+    </div>
+    <p-button (onClick)="onSubmit()" label="Submit" icon="pi pi-check"></p-button>
+</div>

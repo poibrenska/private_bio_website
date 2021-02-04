@@ -1,0 +1,33 @@
+.contact-form h4 {
+    font-size: 17pt;
+    font-style: italic;
+    text-align: center;
+}
+.contact-form input {
+    background-color: #f5e3f3;
+}
+
+.contact-form textarea {
+    background-color: #f5e3f3;
+}
+
+.contact-form .p-dropdown {
+    background-color: #f5e3f3;
+}
+
+.contact-form label {
+    font-style: italic;
+    font-weight: bold;
+}
+
+:host ::ng-deep {
+    .p-dropdown-label {
+        background-color: #f5e3f3;
+    }
+    .p-dropdown-trigger {
+        background-color: #f5e3f3;
+    }
+    .p-dropdown-items {
+        background-color: #c48ebb;
+    }
+}
